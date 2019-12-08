@@ -1,0 +1,73 @@
+.smallModal {
+	display: none;
+	position: fixed;
+	z-index: 99;
+	left: 80px;
+	right: 0;
+	top: 60px;
+	bottom: 0;
+	background: rgba(0,0,0,0.63);
+	overflow-y: auto;
+}
+
+.smallModal .modal-content {
+	margin: 25px auto;
+	padding: 25px;
+	background: #fff;
+	width: 350px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+	border-radius: 3px;
+}
+
+.smallModal .modal-content .modal-title {
+	margin: -25px;
+	margin-bottom: 1px;
+	padding: 10px 25px;
+	font-size: 19px;
+	background: #00BEB9;
+	color: #fff;
+	border-radius: 3px 3px 0 0;
+}
+
+.smallModal .modal-content #CusID {
+	position: absolute;
+	right: 25px;
+}
+
+.smallModal .modal-content .group {
+	margin-top: 25px;
+}
+
+/* Book modal */
+.smallModal .continue-btn {
+	background: #2e363e;
+	color: #fff;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	font-size: 13px;
+	padding: 10px 20px;
+	text-align: center;
+	border-radius: 3px;
+	margin: 0 auto;
+	width: 85px;
+	transition: all 0.2s linear;
+	border: 1px solid #fff;
+}
+
+.smallModal .continue-btn:hover {
+	background: #fff;
+	border: 1px solid #2e363e;
+	color: #2e363e;
+	cursor: pointer;
+}
+
+.smallModal .continue-btn.disabled {
+    background: #919191;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: initial !important;
+}

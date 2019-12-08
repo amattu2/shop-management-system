@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<style>
+p.background
+{
+  position: relative;
+  z-index: 1;
+  text-align:center;
+}
+p.background::before
+{
+  border-top: 1px solid #f2f2f2;
+  content:"";
+  margin: 0 auto;
+  position: absolute;
+  top: 50%; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+}
+p.background span
+{
+  background: #fff;
+  padding: 0 10px;
+}
+</style>
+
+<html>
+	<head>
+		<!-- Styles -->
+		<link rel="stylesheet" type="text/css" href="assets/css/customers.css">
+	</head>
+
+	<body>
+		<div class='customer-list'>
+			<!-- Loader -->
+			<div id='customerListLoader' class='loader-case'>
+				<div class='loader'>
+				   <div id='largeBox'></div>
+				   <div id='smallBox'></div>
+				</div>
+			</div>
+
+			<!-- Search Bar -->
+			<div class='top'>
+				<div class="customer-search-group">
+					<input type="text" id='customerName' required>
+					<span class="bar" style='width: 315px;'></span>
+					<label>Name</label>
+				</div>
+				<div class='option-div'>
+					<i class="fa fa-align-justify"></i>
+				</div>
+				<div class='option-list'>
+					<div class='option-title'>
+						<span>Create Customer</span>
+					</div>
+					<div class='option-body'>
+						<div class="group" style='margin-top: 30px;' id='createCusFirstNameGroup'>
+							<input type="text" required style='margin: 0 20px; width: 235px;'>
+							<span class="bar" style='margin: 0 20px; width: 250px;'></span>
+							<label style='margin: 0 20px'>First Name</label>
+						</div>
+						<div class="group" style='margin-top: 30px' id='createCusLastNameGroup'>
+							<input type="text" required style='margin: 0 20px; width: 235px;'>
+							<span class="bar" style='margin: 0 20px; width: 250px;'></span>
+							<label style='margin: 0 20px'>Last Name</label>
+						</div>
+
+						<div class='cb-group'>
+							<div id='newCustomerSubmit'>Submit</div>
+							<input id='companyCheckbox' type="checkbox" class="checkbox">
+							<label for='companyCheckbox'>Company</label>
+						</div>
+					</div>
+				</div>
+    			</div>
+
+			<!-- Customer List -->
+			<div class='customers'>
+				<table id="table" class="material-table">
+					<tbody id='customerList'>
+						<!-- Will load from DB -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class='customer-info'>
+			<!-- Loader -->
+			<div id='customerInfoLoader' class='loader-case'>
+				<div class='loader'>
+				   <div id='largeBox'></div>
+				   <div id='smallBox'></div>
+				</div>
+			</div>
+
+			<div class='left'>
+				<div class='box customerName'>
+					<div class='title'>
+						<span>Contact Name</span>
+						<div title='Account Type' class='icon' id='accountType' style='font-size: 20px; right: 10px'></div>
+					</div>
+					<div class='body'>
+						<div class='name' id='name'></div>
+					</div>
+				</div>
+
+				<div class='box customerContact'>
+					<div class='title'>
+						<span>Contact Info</span>
+						<div class='icon'><i class="fa fa-circle"></i></div>
+					</div>
+					<div class='body'>
+						<div class='contactMethod' title='Home Phone'>
+							<div class='icon'><i class="fa fa-home" aria-hidden="true"></i></div>
+							<div class='method' id='CusHome'></div>
+						</div>
+						<div class='contactMethod' title='Cell Phone'>
+							<div class='icon'><i class="fa fa-mobile" aria-hidden="true"></i></div>
+							<div class='method' id='CusCell'></div>
+						</div>
+						<div class='contactMethod' title='Work Phone'>
+							<div class='icon'><i class="fa fa-briefcase" aria-hidden="true"></i></div>
+							<div class='method' id='CusWork'></div>
+						</div>
+						<div class='contactMethod' title='Fax Phone'>
+							<div class='icon'><i class="fa fa-fax" aria-hidden="true"></i></div>
+							<div class='method' id='CusFax'></div>
+						</div>
+						<div class='contactMethod' title='Husband&apos;s Email'>
+							<div class='icon'><i class="fa fa-envelope" aria-hidden="true"></i></div>
+							<div class='method' id='CusEmail_H'></div>
+						</div>
+						<div class='contactMethod' title='Wife&apos;s Email'>
+							<div class='icon'><i class="fa fa-envelope" aria-hidden="true"></i></div>
+							<div class='method' id='CusEmail_W'></div>
+						</div>
+					</div>
+				</div>
+
+				<div class='box customerAddress'>
+					<div class='title'>
+						<span>Address</span>
+						<div class='icon'><i class="fa fa-circle fa-1x"></i></div>
+					</div>
+					<div class='body'>
+						<div class='address' title='Customer Address'>
+							<div class='icon'><i class="fa fa-home" aria-hidden="true"></i></div>
+							<div class='method' id='CusAddress'></div>
+						</div>
+					</div>
+				</div>
+
+				<div class='box customerVehicles'>
+					<div class='title'>
+						<span>Vehicles</span>
+						<div class='icon'><i class="fa fa-circle fa-1x"></i></div>
+					</div>
+					<div class='body'>
+						<table class="material-table">
+							<tbody id='vehicle-list'></tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class='right'>
+				<div class='box fabs'>
+					<div class='title'>
+						<span>Customer Tools</span>
+					</div>
+
+					<div class='body'>
+						<div class="multi-fab">
+							<span class="fab green fab-action-button">
+								<i class="fa fa-plus"></i>
+							</span>
+							<ul class="fab-buttons ext">
+								<li id='bookAppt' onclick='bookAppt();' class="fab-buttons__item">
+									<a href="#" class="fab-buttons__link" data-tooltip="Book Appt">
+										<i class="fa fa-calendar-plus-o"></i>
+									</a>
+								</li>
+								<li id='createInvoice' onclick='createInvoice();' class="fab-buttons__item">
+									<a href="#" class="fab-buttons__link" data-tooltip="Create Invoice">
+										<i class="fa fa-file-o"></i>
+									</a>
+								</li>
+								<li id='addVehicle' onclick='addVehicle();' class="fab-buttons__item">
+									<a href="#" class="fab-buttons__link" data-tooltip="Add Vehicle">
+										<i class="fa fa-car"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class='fab blue' id='refresh-fab' title='Refresh Customer'>
+							<i class="fa fa-refresh" aria-hidden="true"></i>
+						</div>
+						<div class='fab orange' id='edit-fab' onclick='editCustomer();' title='Edit Customer'>
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						</div>
+						<div class="multi-fab">
+							<span class="fab white fab-action-button">
+								<i class="fa fa-ellipsis-v"></i>
+							</span>
+							<ul class="fab-buttons">
+								<li id='lockCusFAB' class="fab-buttons__item">
+									<a href="#" class="fab-buttons__link" data-tooltip="Lock Account">
+										<i class="fa fa-lock"></i>
+									</a>
+								</li>
+								<li id='softDelFAB' class="fab-buttons__item">
+									<a href="#" class="fab-buttons__link" data-tooltip="Soft Delete">
+										<i class="fa fa-eye-slash"></i>
+									</a>
+								</li>
+								<li id='purgeFAB' class="fab-buttons__item">
+									<a href="#" class="fab-buttons__link" data-tooltip="Purge Customer">
+										<i class="fa fa-trash"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class='horizontalSep'></div>
+
+				<div class='box notes'>
+					<div class='title'>
+						<span>Customer Notes</span>
+					</div>
+
+					<div class='body'>
+					<p id='CusNotes'></p>
+					<p class='noData' id='NoCusNotes'>Nothing to display</p>
+					</div>
+				</div>
+
+				<div class='horizontalSep'></div>
+
+				<div class='box systemNotes'>
+					<div class='title'>
+						<span>System Notes</span>
+					</div>
+
+					<div class='body'>
+					<p class='noData' id='NoSystemNotes'>Nothing to display</p>
+					<ul id='SystemNotes' style='display: none'>
+						<li id='CusNotHereRecently' style='display: none'><i class="fa fa-info"></i> <span class='text'>Last visit over a year ago</span></li>
+						<li id='CusNotUpdated' style='display: none'><i class="fa fa-info"></i> <span class='text'>Customer info not recent</span></li>
+						<li id='NoCusEmail' style='display: none'><i class="fa fa-info"></i> <span class='text'>No customer email listed</span></li>
+						<li id='NoCusContact' style='display: none'><i class="fa fa-info"></i> <span class='text'>No customer contact numbers</span></li>
+					</ul>
+					</div>
+				</div>
+
+				<div class='horizontalSep'></div>
+
+				<div class='box'>
+					<div class='title'>
+						<span>Cancellation History</span>
+					</div>
+
+					<div class='body' style='padding: 0'>
+						<table id="table" class="material-table">
+							<thead>
+								<th>Type</th>
+								<th>Date</th>
+								<th>Service</th>
+							</thead>
+							<tbody id='appStats'>
+								<!-- Will load from DB -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class='horizontalSep'></div>
+
+				<div class='invoices'>
+					<div class='tabList'>
+						<div class='option' data-target='#appointment-case'>
+							<span>Appointments</span>
+							<div class='underline'></div>
+						</div>
+						<div class='option selected' data-target='#invoice-case'>
+							<span>Recent Invoices</span>
+							<div class='underline'></div>
+						</div>
+					</div>
+
+					<div class='case' id='appointment-case'>
+						<p class='noData'>Nothing to display</p>
+						<div class='inner-case' style='display: none'>
+							<!-- Will be loaded when customer is selected -->
+							<div style='margin-top: 13px'></div>
+						</div>
+					</div>
+
+					<div class='case selected' id='invoice-case'>
+						<p class='noData'>Nothing to display</p>
+						<div class='inner-case' style='display: none'>
+							<!-- Will be loaded when customer is selected -->
+							<div style='margin-top: 13px'></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Vehicle Modal -->
+		<div class='modal vehicleModal'>
+			<div class='modal-content'>
+				<div class='loader-case'>
+					<div class='loader'>
+					   <div id='largeBox'></div>
+					   <div id='smallBox'></div>
+					</div>
+				</div>
+
+				<div class='left'>
+					<div class="box mileageServices">
+						<div class="title">
+							<span>Recommended Services</span>
+							<div class='icon'>*Based on Mi</div>
+						</div>
+
+						<div class="body"></div>
+					</div>
+					<div class="box recentNotes">
+						<div class="title">
+							<span>Recent Notes</span>
+						</div>
+
+						<div class="body"></div>
+					</div>
+					<div class="box serviceHistory">
+						<div class="title">
+							<span>Service History</span>
+							<div class='icon'><i class="fa fa-history"></i></div>
+						</div>
+
+						<div class="body">
+							<div id='vehicleServiceHistory'></div>
+							<p class='noData' id='noServiceHistory'>Nothing to display</p>
+						</div>
+					</div>
+				</div>
+
+				<div class='right'>
+					<div class="box vehicleYMM">
+						<div class="title">
+							<span>Vehicle</span>
+						</div>
+						<div class="body"></div>
+					</div>
+					<div class="box mileage">
+						<div class="title">
+							<span>Vehicle Mileage</span>
+						</div>
+						<div class="body"></div>
+					</div>
+					<div class="box vin">
+						<div class="title">
+							<span>Vehicle VIN</span>
+						</div>
+						<div class="body"></div>
+					</div>
+					<div class="box tag">
+						<div class="title">
+							<span>Vehicle Tag</span>
+						</div>
+						<div class="body"></div>
+					</div>
+					<div class="box truck">
+						<div class="title">
+							<span>Vehicle Truck</span>
+						</div>
+						<div class="body"></div>
+					</div>
+					<div class="box engine">
+						<div class="title">
+							<span>Vehicle Eng</span>
+						</div>
+						<div class="body"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Case to load modals -->
+		<div id='loadModalIntoCase'></div>
+
+		<!-- Scripts -->
+		<script src='assets/js/scripts/numeral.min.js'></script>
+		<script src='assets/js/scripts/moment.js'></script>
+		<script src='assets/js/customers/customers.js'></script>
+	</body>
+</html>

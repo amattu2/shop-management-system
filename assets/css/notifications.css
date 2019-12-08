@@ -1,0 +1,35 @@
+.notify-group {
+	margin: 9px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 310px;	
+}
+
+.notify {
+	padding: 14px;
+	margin: 9px 0;
+	position: relative;
+	font-family: sans-serif;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.12);
+	cursor: pointer;
+	transition: transform 0.2s ease;
+	background: #212121;
+	color: #fff;
+}
+
+.notify p {
+	margin: 0;
+}
+
+.notify.info {
+	border-left: 6px solid #FFC107;
+}
+
+.notify.warning {
+	border-left: 6px solid #F44336;
+}
+
+.notify.success {
+	border-left: 6px solid #4CAF50;
+}

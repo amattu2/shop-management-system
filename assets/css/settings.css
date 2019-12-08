@@ -1,0 +1,266 @@
+.admin-case {
+	height: 99%;
+	margin: 0 25px;
+	background: #fff;
+	box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+	border: 1px solid rgba(0,0,0,.03);
+	border-radius: 3px;
+	position: relative;
+}
+
+/* Left Side */
+.admin-case .left {
+	width: 40%;
+	left: 0;
+	height: calc(100% - 6px);
+	top: 0;
+	padding-top: 6px;
+	background: #f7f7f7;
+	overflow-y: auto;
+}
+
+.left .users .user {
+	width: calc(100% - 25px);
+	margin: 8px auto;
+	min-height: 54px;
+	padding: 5px 3px;
+	background: #fff;
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,.03);
+	box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+	border-left: 3px solid #2980b9;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.user.admin {
+	border-left: 3px solid #e74c3c !important;
+}
+
+.user .image {
+	position: absolute;
+	left: 10px;
+}
+
+.user .image img {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	position: relative;
+}
+
+.user .username {
+	position: absolute;
+	left: 70px;
+	top: 5px;
+	color: #7d7d7d;
+	font-size: 13px;
+}
+
+.user .name {
+	position: absolute;
+	left: 70px;
+}
+
+.user .options {
+	position: absolute;
+	bottom: 5px;
+	right: 10px;
+	font-size: 13px;
+	color: #7d7d7d;
+	transition: all 0.2s linear;
+}
+
+.user .options .option {
+	margin: 0 4px;
+}
+
+.user .options .option:hover {
+	color: rgba(0,0,0,0.87);
+	cursor: pointer;
+}
+
+.left .attemptedLogins {
+
+}
+
+.left .attemptedLogins .login {
+	width: calc(100% - 25px);
+	margin: 8px auto;
+	min-height: 54px;
+	padding: 5px 3px;
+	background: #fff;
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,.03);
+	box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+	border-left: 3px solid #2980b9;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login .count {
+	position: absolute;
+	left: 10px;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #2980b9;
+	color: #fff;
+	font-size: 16px;
+}
+
+.login .bottom-case { 
+	position: absolute;
+	right: 0px;
+	bottom: 5px;
+}
+
+.login .bottom-case span {
+	background: #2980b9;
+	padding: 2px 3px;
+	margin: 0 3px;
+	color: #fff;
+	border-radius: 3px;
+	font-size: 12px;
+}
+
+/* Right Side */
+.admin-case .right {
+	width: 60%;
+	right: 0;
+	height: calc(100% - 6px);
+	position: absolute;
+	top: 0;
+	text-align: center;
+	background: #fff;
+	overflow-y: auto;
+	border-left: 1px solid rgba(0,0,0,.03);
+	padding-top: 6px;
+}
+
+/* Standard elements */
+.sep {
+	height: 2px;
+	background: #eaeaea;
+	margin: 20px 20px;
+}
+
+.box {
+	border: 1px solid rgba(0,0,0,.03);
+	box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+	border-radius: 3px;
+	margin: 8px 20px;
+}
+
+.box .title {
+	padding: 8px 20px;
+	color: rgba(0,0,0,0.87);
+	background: rgba(0,0,0,.05);
+	display: flex;
+	position: relative;
+}
+
+.box .body {
+	background: #fff;
+	color: rgba(0,0,0,0.87);
+	padding: 20px;
+	position: relative;
+}
+
+.group { 
+	position:relative; 
+	margin-top: 25px;
+}
+
+input {
+	font-size:18px;
+	padding:10px 10px 10px 5px;
+	display:block;
+	width:300px;
+	border:none;
+	border-bottom:1px solid #757575;
+}
+
+input:focus { outline:none; }
+
+label {
+	color:#999; 
+	font-size:18px;
+	font-weight:normal;
+	position:absolute;
+	pointer-events:none;
+	left:5px;
+	top:10px;
+	transition:0.2s ease all; 
+	-moz-transition:0.2s ease all; 
+	-webkit-transition:0.2s ease all;
+}
+
+
+input:focus ~ label, input:valid ~ label {
+	top: -20px;
+	font-size: 14px;
+	color: #00BEB9;
+}
+
+.bar { position:relative; display:block; width:300px; }
+
+.bar:before, .bar:after {
+	content:'';
+	height:2px; 
+	width:0;
+	bottom:1px; 
+	position:absolute;
+	background: #00BEB9; 
+	transition:0.2s ease all; 
+	-moz-transition:0.2s ease all; 
+	-webkit-transition:0.2s ease all;
+}
+.bar:before {
+	left:50%;
+}
+.bar:after {
+	right:50%; 
+}
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+	width:50%;
+}
+
+.highlight {
+	position:absolute;
+	height:60%; 
+	width:100px; 
+	top:25%; 
+	left:0;
+	pointer-events:none;
+	opacity:0.5;
+}
+
+input:focus ~ .highlight {
+	-webkit-animation:inputHighlighter 0.3s ease;
+	-moz-animation:inputHighlighter 0.3s ease;
+	animation:inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+	to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+	to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+	to 	{ width:0; background:transparent; }
+}

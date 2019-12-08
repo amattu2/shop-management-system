@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Styles -->
+		<link rel="stylesheet" type="text/css" href="assets/css/extra.css">
+	</head>
+
+	<body>
+		<div class='case'>
+			<div class='menu'>
+				<div class='option active top' data-target='#notes'>
+					<div class='icon'><i class="fa fa-sticky-note-o fa-2x"></i></div>
+				</div>
+				<div class='option' data-target='#quotes'>
+					<div class='icon'><i class="fa fa-comments-o fa-2x"></i></div>
+				</div>
+				<div class='option' data-target='#memos'>
+					<div class='icon'><i class="fa fa-sticky-note-o fa-2x"></i></div>
+				</div>
+				<div class='option'>
+					<div class='icon'><i class="fa fa-credit-card fa-2x"></i></div>
+				</div>
+				<div class='option' data-target='#logs'>
+					<div class='icon'><i class="fa fa-history fa-2x"></i></div>
+				</div>
+			</div>
+
+			<div class='content'>
+				<div class='item active' id='notes'>
+					<textarea spellcheck="false"></textarea>
+				</div>
+				<div class='item' id='quotes'></div>
+				<div class='item' id='memos'></div>
+				<div class='item' id='costs'>cost sheet</div>
+				<div class='item' id='logs'></div>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+		<script src='assets/js/scripts/moment.js'></script>
+		<script src='assets/js/scripts/numeral.min.js'></script>
+		<script src='assets/js/extra/extra.js'></script>
+	</body>
+</html>

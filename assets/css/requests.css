@@ -1,0 +1,90 @@
+.requests {
+	width: 700px;
+	padding: 2px 3px;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 911px) {
+	.requests {
+		width: 100%;
+		padding: 2px 3px;
+		margin: 0 auto;
+	}
+}
+
+.requests .request {
+	min-height: 65px;
+	padding: 15px 25px;
+	color: #111;
+	background: #fff;
+	margin: 4px 0;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+	border-left: 4px solid #2980b9;
+	border-radius: 3px;
+	position: relative;
+}
+
+.requests .request.seen {
+	border-left: 4px solid #00C6BF;
+}
+
+.request .requestNum {
+	position: absolute;
+	top: 15px;
+	left: 111px;
+	color: #929292;
+	font-size: 13px;
+}
+
+.request .requestVehicle {
+	position: absolute;
+	top: 15px;
+	left: 245px;
+	color: #929292;
+	font-size: 13px;
+}
+
+.request .date {
+	position: absolute;
+	left: 4px;
+	top: 0;
+	height: 100%;
+	width: 86px;
+	background: #fff;
+	font-size: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all .2s ease;
+}
+
+.request .date span {
+	padding: 4px;
+	background: #2980b9;
+	border-radius: 50%;
+	width: 55px;
+	height: 55px;
+	font-size: 15px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.request .name {
+	margin: 25px 0;
+	margin-left: 86px;
+	font-size: 20px;
+}
+
+.request .email {
+	position: absolute;
+	right: 25px;
+	bottom: 15px;
+	font-size: 13px;
+}
+
+.request .email a {
+	text-decoration: none;
+	color: #2980b9;
+}

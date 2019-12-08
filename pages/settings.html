@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Styles -->
+		<link rel="stylesheet" type="text/css" href="assets/css/settings.css">
+	</head>
+
+	<body>
+		<div class='admin-case'>
+			<div class='left'>
+				<div class="box users">
+					<div class="title">
+						<span>User List</span>
+					</div>
+
+					<div class="body" id='userList'></div>
+				</div>
+
+				<div class='sep'></div>
+
+				<div class="box attemptedLogins">
+					<div class="title">
+						<span>Attemptive Logins</span>
+					</div>
+
+					<div class="body" id='attemptedLogins'></div>
+				</div>
+
+				<div class='sep'></div>
+
+				<div class="box">
+					<div class="title">
+						<span>Create User</span>
+					</div>
+
+					<div class="body">
+						<div class="group">
+							<input type="text" id='form-name' required>
+							<span class="bar"></span>
+							<label>User&#39;s Name</label>
+						</div>
+						<div class="group">
+							<input type="text" id='form-username' required>
+							<span class="bar"></span>
+							<label>username</label>
+						</div>
+						<div class="group">
+							<input type="text" id='form-email' required>
+							<span class="bar"></span>
+							<label>Email</label>
+						</div>
+						<div class="group">
+							<input type="password" id='form-password' required>
+							<span class="bar"></span>
+							<label>Password</label>
+						</div>
+						<div class="group">
+							<input type="text" id='form-initials' required>
+							<span class="bar"></span>
+							<label>Initials [Eg: XX]</label>
+						</div>
+						<div class="group" id='form-submit'>Submit</div>
+					</div>
+				</div>
+			</div>
+
+			<div class='right'>
+
+			</div>
+		</div>
+
+		<script src='assets/js/settings/settings.js'></script>
+	</body>
+</html>

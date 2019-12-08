@@ -1,0 +1,121 @@
+.files {
+	width: 700px;
+	padding: 2px 3px;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 911px) {
+	.files {
+		width: 100%;
+		padding: 2px 3px;
+		margin: 0 auto;
+	}
+}
+
+.files .file {
+	min-height: 65px;
+	padding: 15px 25px;
+	color: #111;
+	background: #fff;
+	margin: 4px 0;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+	border-left: 4px solid #2980b9;
+	border-radius: 3px;
+	position: relative;
+}
+
+.files .file.seen {
+	border-left: 4px solid #00C6BF;
+}
+
+.file .size {
+	position: absolute;
+	top: 15px;
+	left: 111px;
+	color: #929292;
+	font-size: 13px;
+}
+
+.file .download {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 86px;
+	background: #2980b9;
+	font-size: 40px;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all .2s ease;
+}
+
+.file .download:hover {
+	box-shadow: 2px 0px 11px 0 rgba(0,0,0,.18), 4px 0 15px 0 rgba(0,0,0,.15);
+	cursor: pointer;
+}
+
+.file .name {
+	margin: 25px 0;
+	margin-left: 86px;
+	font-size: 20px;
+}
+
+.file .uploadDate {
+	position: absolute;
+	right: 25px;
+	bottom: 15px;
+	font-size: 13px;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 99;
+	left: 80px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.63);
+}
+
+.modal .modal-content {
+	background: #fff;
+	height: calc(100% - 50px);
+	width: 750px;
+	margin: 25px auto;
+	position: relative;
+	border: 1px solid rgba(0,0,0,.03);
+	box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+	border-radius: 3px;
+}
+
+.fabs {
+	position: fixed;
+	bottom: 25px;
+	right: 37px;
+}
+
+.fabs .fab {
+	border-radius: 50%;
+	color: #fff;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 55px;
+	text-align: center;
+	width: 55px;
+	font: normal normal normal normal 26px / 46px "Material Icons";
+	transition: all 0.2s ease;
+	box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.11), 0 3px 13px 0 rgba(0,0,0,.15);
+}
+
+.fab:hover {
+	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+
+.fab.red {
+	background: #e74c3c;
+}

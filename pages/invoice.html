@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Styles -->
+		<link rel="stylesheet" type="text/css" href="assets/css/invoice.css">
+	</head>
+
+	<body>
+		<!-- Packages -->
+		<div class='side-bar' id='package-bar'>
+			<div class='title'>
+				<h3 class='title'>Packages</h3>
+			</div>
+		</div>
+		<div class='toggleBar' id='packageToggle' data-open='0'><span class='text'>Packages</span><span class='ic'><i class="fa fa-chevron-right"></span></i></div>
+
+		<!-- Invoices -->
+		<div class='side-bar' id='invoice-bar'>
+			<table id="table" class="material-table">
+				<thead>
+					<th>Date</th>
+					<th>Name</th>
+					<th>Desc</th>
+				</thead>
+				<tbody id='invoice-body'>
+					<!-- Will load from DB -->
+				</tbody>
+			</table>
+		</div>
+		<div class='toggleBar' id='invoiceToggle' data-open='0'><span class='text'>Invoices</span><span class='ic'><i class="fa fa-chevron-right"></span></i></div>
+
+		<!-- Body Cover -->
+		<div class='bodyCover'></div>
+
+		<!-- Invoice -->
+		<div class='invoice-case' id='invoice-case' style='margin-bottom: 41px'></div>
+
+		<!-- Bottom Bar-->
+		<div class='bottom-bar'>
+			<!-- Options Btn -->
+			<div class='button' id='options-btn'>
+				<div class='icon'>
+					<i class="fa fa-ellipsis-v"></i>
+				</div>
+				<div class='text'>
+					<span>Misc Charges</span>
+				</div>
+				<!-- Option Popup -->
+				<ul class='popup'>
+					<div class='cb-group'>
+						<input id='options-tax' type="checkbox" class="checkbox">
+						<label for='options-tax'>Tax Exempt</label>
+					</div>
+					<div class='cb-group'>
+						<input id='options-misc' type="checkbox" class="checkbox" checked>
+						<label for='options-misc'>Shop Supplies</label>
+					</div>
+					<div class='cb-group'>
+						<input id='options-hazard' type="checkbox" class="checkbox" checked>
+						<label for='options-hazard'>Hazardous Waste</label>
+					</div>
+					<div class='sep'></div>
+					<div class='cb-group'>
+						<input id='options-round' type="checkbox" class="checkbox">
+						<label for='options-round'>Auto Round-Down</label>
+					</div>
+				</ul>
+			</div>
+
+			<!-- Edit Options -->
+			<div class='button' id='edit-btn'>
+				<div class='icon'>
+					<i class="fa fa-pencil"></i>
+				</div>
+				<div class='text'>
+					<span>Options</span>
+				</div>
+				<!-- Option Popup -->
+				<ul class='popup'>
+					<li id='edit-desc'><i class="fa fa-file-text"></i>Edit Desc.</li>
+					<li id='edit-mileage'><i class="fa fa-tachometer" style='padding-right: 12px'></i>Edit Mileage</li>
+					<li id='edit-notes'><i class="fa fa-sticky-note"></i>Edit Notes</li>
+					<li id='add-credit'><i class="fa fa-money"></i>Add Credit</li>
+				</ul>
+			</div>
+
+			<!-- Export Options -->
+			<div class='button' id='export-btn'>
+				<div class='icon'>
+					<i class="fa fa-floppy-o"></i>
+				</div>
+				<div class='text'>
+					<span>Save</span>
+				</div>
+				<!-- Option Popup -->
+				<ul class='popup' style='left: 10%'>
+					<li id='export-email'>
+						<i class="fa fa-share-alt"></i>
+						Email
+					</li>
+					<li id='export-save'>
+						<i class="fa fa-download"></i>
+						Download
+					</li>
+					<li id='export-print'>
+						<i class="fa fa-print"></i>
+						Print
+					</li>
+					<div class='sep'></div>
+					<li class='bg-green' id='saveInvoice'>
+						<i class="fa fa-floppy-o"></i>
+						Save Changes
+					</li>
+					<li class='bg-red' id='deleteInvoice'>
+						<i class="fa fa-trash"></i>
+						Delete
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+		<script src='assets/js/scripts/numeral.min.js'></script>
+		<script src='assets/js/scripts/moment.js'></script>
+		<script src='assets/js/invoice/invoice.js'></script>
+	</body>
+</html>

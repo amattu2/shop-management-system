@@ -1,0 +1,107 @@
+<div id='modal-case'>
+	<div id='modal'>
+		<div class='title' id='modal-title'>Appointment</div>
+		<div class='tabs'>
+			<div class='tab selected' data-target='#appointmentSection'>
+				Details
+				<div class='ul'></div>
+			</div>
+			
+			<div class='tab' data-target='#customerSection'>
+				Customer
+				<div class='ul'></div>
+			</div>
+		</div>
+		
+		<div class='section selected' id='appointmentSection'>
+			<ul class='inputs'>
+				<li class='group'>
+					<label>Staff</label>
+					<select id='staff'></select>
+					<div class='clearfix'></div>
+				</li>
+				<li class='group'>
+					<label>Service</label>
+					<select id='service'>
+						<option disabled selected value='0'>Select A Service</option>
+					</select>
+					<div class='clearfix'></div>
+				</li>	
+				<li class='group'>
+					<label>Time</label>
+					<select id='time'></select>
+					<div class='clearfix'></div>
+				</li>
+				<li class='group'>
+					<label>Length</label>
+					<select id='lengthMin'></select>
+					<div class='clearfix'></div>
+				</li>	
+				<li class='group'>
+					<label>Notes</label>
+					<textarea id='comment'></textarea>
+					<div class='clearfix'></div>
+				</li>																	
+			</ul>
+			
+			<div class='uploadBtn'>
+				<div class="file-upload">
+					<label for="upload" class="file-upload__label">Upload Picture</label>
+					<input id="upload" class="file-upload__input" type="file" name="file-upload">
+				</div>			
+			</div>
+		</div>
+		
+		<div class='section' id='customerSection'>
+			<div class='customer-search-group'>
+				<input type='text' id='CustomerSearchInput' placeholder='Search for a customer' />
+				<div id='CustomerSearchSubmit'><i class="fa fa-search" aria-hidden="true"></i></div>
+				<div id='CustomerSearchResults'></div>
+			</div>
+			<div class='customer-info'>
+				<span id='deselect-customer'>
+					&times;
+				</span>
+				
+				<!-- Cus Contact -->
+				<li class='group'>
+					<label>Customer</label>
+					<span id='customer-name'></span>
+					<div class='clearfix'></div>
+				</li>
+				<li class='group'>
+					<label>Contact</label>
+					<input type='text' id='customer-contact' placeholder='Eg. Bryan Krebs'/>
+					<div class='clearfix'></div>
+				</li>									
+				<li class='group'>
+					<label>Contact #</label>
+					<input type='text' id='customer-contact-num' placeholder='Eg. 301-000-0000' />
+					<div class='clearfix'></div>
+				</li>	
+				<!-- Vehicle Info -->
+				<li class='group'>
+					<label>Vehicle</label>
+					<span id='appointment-vehicle' style='font-size: 14px'></span>
+					<div class='clearfix'></div>
+				</li>	
+				<!-- Contact -->
+				<li class='group'>
+					<label>Reminder</label>
+					<select id='send-reminder'>
+						<option value='1' selected>Send Reminder</option>
+						<option value='0'>Do Not Send Reminder</option>
+					</select>
+					<div class='clearfix'></div>
+				</li>									
+							
+			</div>
+		</div>
+		
+		<div class='buttons'>
+			<div class='sep'></div>
+			<div class='btn disabled' id='continue'>Book</div>
+			<div class='btn' id='cancel'>Cancel</div>
+		</div>		
+	</div>
+</div>

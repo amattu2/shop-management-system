@@ -1,0 +1,133 @@
+<!-- Invoice HTML -->
+<div class="invoice-box" id='invoice-box'>
+	<table cellpadding="0" cellspacing="0">
+		<!-- Header, Inv Details -->
+		<tr class="top">
+			<td colspan="2">
+				<table>
+					<tr>
+						<td class="title">
+						<img src="assets/img/invoice-header.png" style="width:100%; max-width:300px;">
+						</td>
+
+						<td class='invoice-details'>
+						Invoice #: <span id='invoice-number'></span><br />
+						Employee #: <span id='invoice-employeeID'></span><br />
+						Created: <span id='invoice-date'></span>
+						</td>
+					</tr>
+				</table>
+	                </td>
+		</tr>
+		<!-- Customer Information -->
+		<tr class="information">
+			<td colspan="2">
+				<table>
+					<tr>
+						<td>
+							<span id='customer-name'></span><br/>
+							<span id='customer-addr1'></span><br/>
+							<span id='customer-addr2'></span><br/>
+							<span id='customer-cell'></span>&nbsp;&nbsp;&nbsp;<span id='customer-home'></span>&nbsp;&nbsp;&nbsp;<span id='customer-work'></span>
+						</td>
+						<td style='font-size: 13px'>
+							<span id='vehicle-year'></span>&nbsp;<span id='vehicle-make'></span>&nbsp;<span id='vehicle-model'></span><br/>
+							<span id='vehicle-engine'></span><br/>
+							<b>VIN</b>:&nbsp;<span id='vehicle-vin'></span><br />
+							<b>Mileage</b>:&nbsp;<span id='vehicle-mileage'></span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<!-- Labor Heading -->
+		<tr class="heading" id='labors'>
+			<td class='py-0'>
+				<table>
+					<td style='border-bottom:unset;width: 95px;padding: 0;'></td>
+					<td style='border-bottom:unset;text-align: left; padding: 0; padding-left: 1px;'>Labor</td>
+				</table>
+			</td>
+			<td class='py-0'>
+				<table>
+					<td style='border-bottom:unset;padding: 0;'><div class='button-case'><i class="fa plus fa-plus-circle"></i> | <i class="fa minus fa-minus-circle"></i></div></td>
+					<td style='border-bottom:unset;text-align: right;'>Amount</td>
+				</table>
+			</td>
+		</tr>
+		<td class='p-0' colspan='2'>
+			<table id='labor-list' style='padding: 0'></table>
+		</td>
+
+		<!-- Part Heading -->
+		<tr class="heading" id='parts'>
+			<td class='py-0'>
+				<table>
+					<td style='border-bottom: unset;width: 95px;padding: 0;'>Part No.</td>
+					<td style='border-bottom: unset;text-align: left; padding: 0; padding-left: 1px;'>Parts</td>
+				</table>
+			</td>
+			<td class='py-0'>
+				<table>
+					<td style='border-bottom:unset;padding: 0;'><div class='button-case'><i class="fa plus fa-plus-circle"></i> | <i class="fa minus fa-minus-circle"></i></div></td>
+					<td style='border-bottom:unset;text-align: right;'>Amount</td>
+				</table>
+			</td>
+		</tr>
+		<td class='p-0' colspan='2'>
+			<table id='parts-list' style='padding: 0'></table>
+		</td>
+
+		<!-- Misc Charges, Etc -->
+		<tr class="heading" id='fees'>
+			<td>Service Charges</td>
+			<td>Amount</td>
+		</tr>
+		<td class='p-0' colspan='2'>
+			<table id='misc-list' style='padding: 0'></table>
+		</td>
+
+		<!-- Total -->
+		<tr class="heading">
+			<td>Notes</td>
+			<td>Total</td>
+		</tr>
+		<tr class="item" style='border-bottom: unset'>
+			<td style='border-bottom: unset; margin: 5px 0; width: 80%;'>
+				<div style='border-left: 3px solid #2E363E; padding: 0 7px; text-align: left; white-space: pre-wrap; border-radius: 3px;' id='invoice-notes'></div>
+			</td>
+			<td style='padding: 10px 0; border-bottom: unset;'>
+				<b>Sub-Total: <span id='invoice-subtotal'>0.00</span></b></br>
+				<b style='border-bottom: 3px double;'>Tax: <span id='invoice-tax'>0.00</span></b><br/>
+				<b>Total: <span id='invoice-total'>0.00</span></b>
+			</td>
+		</tr>
+
+		<!-- Terms, Sig Line -->
+		<tr class="heading terms" id='terms'>
+			<td>Terms</td>
+			<td></td>
+		</tr>
+		<tr class="item terms">
+			<td colspan='2' style='border-bottom: unset;'>
+				<div class='terms-div'>
+				Unless otherwise stated, warranty on parts & labor is <b>6 Months</b> or <b>6,000 Miles</b>, whichever occurs first.
+				An express mechanics lien is acknowledged on the above vehicle to secure the amount of repairs thereto, until such time as cach payment has been made in full.
+				It is understood that  Automotive Management Corporation will not be held responsible for loss or damage to vehicles or articles left in vehicles in case of <b>Fire</b>, <b>Theft</b>, <b>Or</b> any otther cause beyond &apos;s control.
+				Upon signing this repair order, it is accepted as a complete and comprehensive description of the repair work done on this vehicle.
+				</div>
+			</td>
+		</tr>
+		<tr class="item terms">
+			<td colspan='2' style='border-bottom: unset; text-align: center;'>
+				DATE&nbsp;&nbsp;_________________________&nbsp;&nbsp;&nbsp;&nbsp;SIGNED&nbsp;&nbsp;________________________________
+			</td>
+		</tr>
+		<tr class='item'>
+			<td colspan='2' style='border-bottom: unset; text-align: left;'>
+				<svg id='barcode'></svg>
+			</td>
+		</tr>
+	</table>
+</div>

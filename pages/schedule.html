@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Styles -->
+		<link rel="stylesheet" type="text/css" href="assets/css/schedule.css">
+		<link  href="assets/css/datepicker.min.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<!-- Modals -->
+		<div class='modal-case' id='modal-loadInto'></div>
+		<div id='vehicle-prompt'></div>
+		<div class='loader-case'>
+			<div class='loader'>
+			   <div id='largeBox'></div>
+			   <div id='smallBox'></div>
+			</div>
+		</div>
+
+		<!-- Month Controls -->
+		<div class='date-selector'>
+			<span id='today'>Today</span>
+			<span id='previous-day'><i class='fa fa-chevron-left'></i></span>
+			<span id='date-picker'>OOO 000 0000</span>
+			<span id='next-day'><i class='fa fa-chevron-right'></i></span>
+		</div>
+
+		<!-- Actual Schedule -->
+		<div class='vehicle-controls'>
+			<div class='fab' id='invoice-fab' title='Create Invoice' style='background-color: #27ae60'>
+				<i class="fa fa-file" aria-hidden="true"></i>
+			</div>
+			<div class='fab' id='edit-fab' title='Edit Appointment' style='background-color: #e67e22'>
+				<i class="fa fa-pencil" aria-hidden="true"></i>
+			</div>
+			<div class='fab' id='remove-fab' title='Remove Appointment' style='background-color: rgba(231, 76, 60, 1)'>
+				<i class="fa fa-trash" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div class='schedule-case' id='schedule-case'></div>
+
+		<!-- Scripts -->
+		<script src='assets/js/scripts/moment.js'></script>
+		<script src="assets/js/schedule/datepicker.min.js"></script>
+		<script src='assets/js/schedule/schedule.js'></script>
+	</body>
+</html>

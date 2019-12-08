@@ -1,0 +1,147 @@
+.navbar {
+	box-shadow: 0px 0px 5px rgba(0,0,0,.15);
+	position: fixed;
+	z-index: 99;
+	width: calc(100% - 80px);
+	margin-left: 80px;
+	color: #fff;
+	font-weight: 400;
+	top: 0;
+	height: 60px;
+	background: #00BEB9;
+	background: -webkit-linear-gradient(left, #00C6BF , #00AECC);
+	background: -o-linear-gradient(right, #00C6BF , #00AECC);
+	background: -moz-linear-gradient(right, #00C6BF , #00AECC);
+	background: linear-gradient(to right, #00C6BF , #00AECC);
+}
+
+.navbar .title {
+	padding: 0 25px;
+	  width: calc(35% - 50px);
+	display: inline-block;
+}
+
+.navbar .title h2 {
+	margin: 0;
+	line-height: 60px;
+	font-size: 26px;
+	font-weight: 300;
+}
+
+.navbar .buttons {
+	float: right;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	height: 100%;
+	width: calc(65% - 50px);
+	padding: 0 25px;
+}
+
+.navbar .buttons .btn {
+	transition: all 0.2s ease;
+	font-size: 17px;
+	margin: 0 10px;
+}
+
+.navbar .buttons .btn:hover {
+	cursor: pointer;
+	color: #ddd;
+}
+
+.navbar #accountName {
+	margin-right: 17px;
+}
+
+.sidebar {
+	position: fixed;
+	width: 80px;
+	height: 100%;
+	background: #2E363E;
+	top: 0;
+	font-size: 16px;
+	font-weight: 300;
+	color: #222;
+	line-height: 1.4;
+	z-index: 1000;
+}
+
+.sidebar .link {
+	width: 100%;
+	padding: 8px 0;
+	text-align: center;
+	color: #dcdcdc;
+	transition: all 0.2s ease;
+	position: relative;
+}
+
+.sidebar .link.active .hover {
+	margin-left: 4px;
+}
+
+.sidebar .link:hover:not(.active) {
+	cursor: pointer;
+	color: #fff;
+}
+
+.sidebar .link.active {
+	background: #222;
+	border-left: 2px solid #fff;
+	width: calc(100% - 2px);	
+}
+
+.sidebar .link .hover {
+	margin: 6px;
+	padding: 6px;
+	transition: all 0.2s ease;
+}
+
+.sidebar .link:hover:not(.active) .hover {
+	background: rgba(255, 255, 255, 0.12);
+	border-radius: 5px;
+}
+
+.sidebar .link.sm {
+	padding: 5px 0;
+	
+}
+
+.sidebar .link.sm .hover {
+	margin: 3px;
+	padding: 3px;
+	transition: all 0.2s ease;
+}
+
+
+.sidebar #side-sep {
+	background: #ddd;
+	width: 75%;
+	height: 3px;
+	border-radius: 3px;
+	margin: 9px auto;
+}
+
+.sidebar span.notification {
+	position: absolute;
+	top: 4px;
+	right: 9px;
+	font-size: 12px;
+	border-radius: 50%;
+	background: #e74c3c;
+	color: #fff;
+	width: 17px;
+	height: 17px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sidebar span.notification:before {
+	content: "";
+	position: absolute;
+	top: 15px;
+	border-style: solid;
+	border-width: 5px 5px 0;
+	border-color: #e74c3c transparent;
+	display: block;
+}

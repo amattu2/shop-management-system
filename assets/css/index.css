@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body, HTML {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'Lato', sans-serif;
+	overflow: hidden;
+}
+
+.container {
+	margin-left: 80px;
+	margin-top: 60px;
+	padding: 25px;
+	height: calc(100% - 110px);
+	background: #E8F2F4;
+	width: calc(100% - 130px);
+	overflow-y: auto;
+	position: relative;
+}
+
+.navbar {
+	box-shadow: 0px 0px 5px rgba(0,0,0,.15);
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	padding-left: 0;
+	color: #fff;
+	font-weight: 400;
+	top: 0;
+	height: 60px;
+	background: #00BEB9;
+	/*background: linear-gradient(to right, #2e363e 6%, #00AECC);*/
+	background: linear-gradient(to right, #00C6BF , #00AECC); 
+	user-select: none;
+}
+
+.navbar .title {
+	padding: 0;
+	padding-left: 104px;
+	width: calc(35% - 104px);
+	display: inline-block;
+}
+
+.navbar .title h2 {
+	margin: 0;
+	line-height: 60px;
+	font-size: 26px;
+	font-weight: 300;
+}
+
+.navbar .buttons {
+	float: right;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	height: 100%;
+	width: calc(65% - 50px);
+	padding: 0 25px;
+}
+
+.navbar .buttons .btn {
+	transition: all 0.2s ease;
+	font-size: 17px;
+	margin: 0 10px;
+}
+
+.navbar .buttons .btn:hover {
+	cursor: pointer;
+	color: #ddd;
+}
+
+.navbar #accountName {
+	margin-right: 17px;
+}
+
+.sidebar {
+	position: fixed;
+	width: 80px;
+	height: 100%;
+	background: #2E363E;
+	top: 60px;
+	font-size: 16px;
+	font-weight: 300;
+	color: #222;
+	line-height: 1.4;
+	z-index: 999;
+	user-select: none;
+}
+
+.sidebar .link {
+	width: calc(100% - 2px);
+	padding: 8px 0;
+	text-align: center;
+	color: #cecece;
+	transition: all 0.2s ease;
+	border-left: 2px solid transparent;
+	position: relative;
+}
+
+.sidebar .link:hover:not(.active) {
+	cursor: pointer;
+	color: #fff;
+}
+
+.sidebar .link.active {
+	background: #222;
+	border-left: 2px solid #fff;	
+}
+
+.sidebar .link .hover {
+	margin: 6px;
+	padding: 6px;
+	transition: all 0.2s ease;
+}
+
+.sidebar .link:hover:not(.active) .hover {
+	background: rgba(255, 255, 255, 0.12);
+	border-radius: 5px;
+}
+
+.sidebar .link.sm {
+	padding: 5px 0;
+	
+}
+
+.sidebar .link.sm .hover {
+	margin: 3px;
+	padding: 3px;
+	transition: all 0.2s ease;
+}
+
+
+.sidebar #side-sep {
+	background: #ddd;
+	width: 75%;
+	height: 3px;
+	border-radius: 3px;
+	margin: 9px auto;
+}
+
+.sidebar span.notification {
+	position: absolute;
+	top: 4px;
+	right: 9px;
+	font-size: 12px;
+	border-radius: 50%;
+	background: #e74c3c;
+	color: #fff;
+	width: 17px;
+	height: 17px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sidebar span.notification:before {
+	content: "";
+	position: absolute;
+	top: 15px;
+	border-style: solid;
+	border-width: 5px 5px 0;
+	border-color: #e74c3c transparent;
+	display: block;
+}
+
+.extra-modal {
+	position: fixed;
+	top: 60px;
+	left: 80px;
+	right: 0;
+	bottom: 0;
+	background: rgba(255,255,255,.67);
+	z-index: 999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
